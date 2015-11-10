@@ -19,27 +19,39 @@
 </head>
 <body>
 	<!-- Initiate app -->
-	<div ng-app="myApp" ng-controller="myCtrl">
-		<!-- Form -->
-		<form class="container" name="songForm">
-			<div class="form-group">
-				<label>Spotify search:</label>
-				<input name="search" placeholder="Enter your search.." ng-model="track" class="form-control"></input>
+	<div class="container-fluid" ng-app="myApp" ng-controller="myCtrl">
+		<div class="row">
+			<div class="col-md-6"> 
+				<!-- Form -->
+				<form class="container" name="songForm">
+					<div class="form-group">
+						<label>Spotify search:</label>
+						<input name="search" placeholder="Enter your search.." ng-model="track" class="form-control"></input>
+					</div>
+					<div class="form-group">
+						<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSongs()" type="submit">Submit</button>
+					</div>
+				</form>
+				
+				<!-- Results -->
+				<div class="container-fixed">
+					<div class="help-block">
+						<span ng-show="tracks.length>0">Click to sample</span>
+						<span ng-show="currentSong && !audioObject.paused">(playing)</span>
+					</div>
+					<ul>
+						<li ng-repeat="track in tracks" class="" ng-click="play(track.preview_url); artistInfo(track)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
+					</ul>			
+				</div>
 			</div>
-			<div class="form-group">
-				<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSongs()" type="submit">Submit</button>
+			<div class="col-md-6"> 
+				<div id="profile">
+					<h5>Artists</h5>
+					<ul id="artistList">
+						<li ng-repeat="artist in artists">{{artist.name}}</li>
+					</ul>
+				</div>
 			</div>
-		</form>
-		
-		<!-- Results -->
-		<div class="container-fixed">
-			<div class="help-block">
-				<span ng-show="tracks.length>0">Click to sample</span>
-				<span ng-show="currentSong && !audioObject.paused">(playing)</span>
-			</div>
-			<ul>
-				<li ng-repeat="track in tracks" class="" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
-			</ul>			
 		</div>
 	</div>
 </body>

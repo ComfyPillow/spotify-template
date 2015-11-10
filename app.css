@@ -1,3 +1,17 @@
 body {
   padding:10px;
 }
+
+ul {
+	list-style-type: none;
+}
+
+
+#artistList {
+	padding-left : 0;
+}
+
+.form-control {
+	width: 50%;
+}
+

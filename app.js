@@ -9,6 +9,7 @@ var myCtrl = myApp.controller('myCtrl', function($scope, $http) {
       data = $scope.tracks = response.tracks.items
       
     })
+
   }
   $scope.play = function(song) {
     if($scope.currentSong == song) {
@@ -22,6 +23,9 @@ var myCtrl = myApp.controller('myCtrl', function($scope, $http) {
       $scope.audioObject.play()  
       $scope.currentSong = song
     }
+  }
+  $scope.artistInfo = function(song) {
+      $scope.artists = song.artists;
   }
 })
 
