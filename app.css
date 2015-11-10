@@ -1,49 +1,59 @@
 body {
-  padding:10px;
-  background-color : #d3d3d3;
+  padding : 10px;
+  background-image : url("background.jpg");
+  background-position : right bottom;
+  background-attachment : fixed;
 }
+
+h1, h2, .name {
+	font-family : 'Century Gothic', 'Book Antiqua', Palatino, Serif;
+	text-decoration : underline;
+}
+
+h2, h3, li{
+	border-radius : .25em;
+	font-weight : bold;
+	text-align : center;
+}
+
+h3 { padding-top : .5em;}
  
 img {
+	display : block;
 	height : auto;
 	width : 50%;
 	margin-left : auto;
 	margin-right : auto;
-	display : block;
 }
 
-label {
+label, #spotify{
 	padding-top : 1em;
 }
 
 ul {
 	list-style-type: none;
-	padding-left : 0;
 	padding-bottom : 1em;
-}
-
-h1, h2 {
-	text-decoration : underline;
-}
-
-h2, li{
-	font-weight : bold;
-	text-align : center;
-	border-radius : .25em;
+	padding-left : 0;
 }
 
 
 #explore {
-	background-color : #787878;
+	background-color : rgba(120, 120, 120, .8);
 	margin-top : 1em;
 }
 
-.name {
-	font-size : 25px;
-	font-style : italic;
-	padding-top : 1em;
+#spotify {
+	width : 30%;
 }
 
-.container, .container-fluid, .col-md-6 {
+.col-md-6 {
+	background-color : rgba(188,237,145, .8);
+	width:45%;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.container, .container-fluid, .col-md-6, .name {
 	border-radius : .5em;
 }
 
@@ -52,17 +62,42 @@ h2, li{
 }
 
 .form-control {
-	width: 50%;
+	width: 100%;
 }
 
-.col-md-6 {
-	background-color : #78AB46;
-	width:45%;
-	margin-left: 1em;
-	margin-right: 1em;
+.name {
+	background-color : #c0c0c0;
+	border : 1px solid gray;
+	font-size : 30px;
+	font-style : italic;
+	margin-bottom : .5em;
+	margin-left : auto;
+	margin-right : auto;
+	text-decoration : none;
+	width : 50%;
 }
+
+.name:hover, .songs:hover {
+	color : purple;
+}
+
+.relatedNames {
+	float : left;
+	margin : 1em;
+	font-weight : bold;
+	font-style : italic;
+	text-align : center;
+}
+
+.relatedImages {
+	padding-top : .5em;
+	width : auto;
+	height : 128px;
+}
+
 
 .songs {
 	border : 1px solid #787878;
 	background-color : white;
 }
+
