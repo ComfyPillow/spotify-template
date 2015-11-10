@@ -13,8 +13,8 @@ Yes, Jack Whitesell from Lecture A helped me with explaining how to properly int
 
 4. Approximately how many hours did it take you to complete this challenge?
 16 hours
-- 4~6 was spent learning and understanding the lecture material that I missed
-- approximately 3 was spent coming up and testing ideas (couldn't get echonest to work)
-- the rest went to working and debugging
+4~6 was spent learning and understanding the lecture material that I missed
+approximately 3 was spent coming up and testing ideas (couldn't get echonest to work)
+the rest went to working and debugging
 
 5. Did you encounter any problems in this challenge we should warn students about in the future? How can we make the challenge better?
