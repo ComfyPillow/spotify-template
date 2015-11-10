@@ -57,6 +57,7 @@
 		<div id="explore" class="container-fluid" ng-show="clicked"> 
 			<h1 id="exploreHeader"> Explore </h1>
 			<h4> <i> Related Artists</i> </h4>
+			<h5 ng-repeat="artist in artists">{{artist.name}}<img ng-src="{{artist.images[2].url}}"></h5> 
 		</div>
 	</div>
 </body>

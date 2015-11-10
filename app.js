@@ -1,6 +1,4 @@
-var data;
-var artistData;
-var relatedData;
+var idData;
 var baseUrl = 'https://api.spotify.com/v1/search?type=track&query='
 var artistData = 'https://api.spotify.com/v1/artists/'
 var myApp = angular.module('myApp', [])
@@ -9,9 +7,10 @@ var myCtrl = myApp.controller('myCtrl', function($scope, $http) {
   $scope.audioObject = {}
   $scope.getSongs = function() {
     $http.get(baseUrl + $scope.track).success(function(response){
-      data = $scope.tracks = response.tracks.items
+      $scope.tracks = response.tracks.items
     })
   }
+
   $scope.play = function(song) {
     $scope.clicked = true;
     $('#artistList').empty('');
@@ -27,27 +26,23 @@ var myCtrl = myApp.controller('myCtrl', function($scope, $http) {
       $scope.currentSong = song
     }
   }
-  $scope.artistInfo = function(song) {
-    for (i = 0; i < song.artists.length; i++) {
 
+  $scope.artistInfo = function(song) {
+    var artistID = song.artists[0].id;
+    for (i = 0; i < song.artists.length; i++) {
         $http.get(artistData + song.artists[i].id).success(function(response){
           $scope.profile = response;
-          var info = $('<li class="name">' + $scope.profile.name + '</li> <img src="' + $scope.profile.images[1].url + '" ng-click="getRelated("' + $scope.profile.id +'");">')
+          var info = $('<li class="name" ng-click="getRelated("' + $scope.profile.id +'");">' + $scope.profile.name + '</li> <img src="' + $scope.profile.images[1].url + '">')
           $('#artistList').append(info);
         })
     }
-      /* $scope.artists = song.artists;
-      $http.get(artistData + song.artists[0].id).success(function(response){
-        $scope.image = response.images[1].url;
-      }) */
+    $scope.getRelated(artistID);
   }
 
-  $scope.getRelated = function(id) {
-    console.log(id);
-    /*$http.get(artistData + id).success(function(response){
-        relatedData = $scope.images = response.images;
-        return relatedData.images[1].url;
-    })*/
+  $scope.getRelated = function(artistID) {
+      $http.get(artistData + artistID + "/related-artists").success(function(response){
+        $scope.related = response;
+      })
   }
 })
 
