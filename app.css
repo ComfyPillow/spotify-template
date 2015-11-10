@@ -1,17 +1,68 @@
 body {
   padding:10px;
+  background-color : #d3d3d3;
+}
+ 
+img {
+	height : auto;
+	width : 50%;
+	margin-left : auto;
+	margin-right : auto;
+	display : block;
+}
+
+label {
+	padding-top : 1em;
 }
 
 ul {
 	list-style-type: none;
+	padding-left : 0;
+	padding-bottom : 1em;
+}
+
+h1, h2 {
+	text-decoration : underline;
+}
+
+h2, li{
+	font-weight : bold;
+	text-align : center;
+	border-radius : .25em;
 }
 
 
-#artistList {
-	padding-left : 0;
+#explore {
+	background-color : #787878;
+	margin-top : 1em;
+}
+
+.name {
+	font-size : 25px;
+	font-style : italic;
+	padding-top : 1em;
+}
+
+.container, .container-fluid, .col-md-6 {
+	border-radius : .5em;
+}
+
+.container, .container-fluid {
+	width: 100%;
 }
 
 .form-control {
 	width: 50%;
 }
 
+.col-md-6 {
+	background-color : #78AB46;
+	width:45%;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.songs {
+	border : 1px solid #787878;
+	background-color : white;
+}
